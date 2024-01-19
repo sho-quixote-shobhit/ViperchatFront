@@ -65,7 +65,7 @@ const SideDrawer = () => {
         }
         try {
             setloading(true);
-            await axios.get(`http://localhost:5000/user/getusers?search=${search}`, {
+            await axios.get(`https://viper-chat-app.onrender.com/user/getusers?search=${search}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')
@@ -90,7 +90,7 @@ const SideDrawer = () => {
     const accessChat = async (userId) => {
         try {
             setloadingChat(true)
-            await axios.post('http://localhost:5000/chat/', { userId }, {
+            await axios.post('https://viper-chat-app.onrender.com/chat/', { userId }, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')

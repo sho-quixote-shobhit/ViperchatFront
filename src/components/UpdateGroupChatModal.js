@@ -40,7 +40,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setfetchAgain , fetchMessages}) => {
         }
         try {
             setloading(true);
-            await axios.put('http://localhost:5000/chat/groupremoveuser' , {chatId : selectedChat._id , userId : usertoremove._id}, {headers : {
+            await axios.put('https://viper-chat-app.onrender.com/chat/groupremoveuser' , {chatId : selectedChat._id , userId : usertoremove._id}, {headers : {
                 'Content-Type' : 'application/json',
                 'Authorization' : 'Bearer ' + localStorage.getItem('jwt')
             }}).then((res) => {
@@ -67,7 +67,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setfetchAgain , fetchMessages}) => {
 
         try {
             setrenameloading(true)
-            await axios.put('http://localhost:5000/chat/renamegroup' , {chatName : groupChatName , chatId : selectedChat._id} , {headers : {
+            await axios.put('https://viper-chat-app.onrender.com/chat/renamegroup' , {chatName : groupChatName , chatId : selectedChat._id} , {headers : {
                 'Content-Type' : 'application/json',
                 'Authorization' : 'Bearer ' + localStorage.getItem('jwt')
             }}).then((res)=>{
@@ -106,7 +106,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setfetchAgain , fetchMessages}) => {
 
         try {
             setloading(true);
-            await axios.put('http://localhost:5000/chat/groupadduser' , {chatId : selectedChat._id , userId : newuser._id}, {headers : {
+            await axios.put('https://viper-chat-app.onrender.com/chat/groupadduser' , {chatId : selectedChat._id , userId : newuser._id}, {headers : {
                 'Content-Type' : 'application/json',
                 'Authorization' : 'Bearer ' + localStorage.getItem('jwt')
             }}).then((res) => {
@@ -141,7 +141,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setfetchAgain , fetchMessages}) => {
         }
         try {
             setloading(true);
-            await axios.get(`http://localhost:5000/user/getusers?search=${search}`, {
+            await axios.get(`https://viper-chat-app.onrender.com/user/getusers?search=${search}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')

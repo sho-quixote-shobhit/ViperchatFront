@@ -45,7 +45,7 @@ const GroupChatModal = ({ children }) => {
         }
         try {
             setloading(true);
-            await axios.get(`http://localhost:5000/user/getusers?search=${search}`, {
+            await axios.get(`https://viper-chat-app.onrender.com/user/getusers?search=${search}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')
@@ -97,7 +97,7 @@ const GroupChatModal = ({ children }) => {
             return;
         }
         try {
-            await axios.post('http://localhost:5000/chat/creategroup', { name: groupChatName, users: JSON.stringify(selectedUsers.map((u) => u._id)) }, {
+            await axios.post('https://viper-chat-app.onrender.com/chat/creategroup', { name: groupChatName, users: JSON.stringify(selectedUsers.map((u) => u._id)) }, {
                 headers: {
                     'Content-type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')

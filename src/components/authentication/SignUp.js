@@ -114,7 +114,7 @@ const SignUp = () => {
             return;
         }
         setloading(true)
-        await axios.post('http://localhost:5000/user/signup', { name, email, password , pic }, { withCredentials: true }).then(res => {
+        await axios.post('https://viper-chat-app.onrender.com/user/signup', { name, email, password , pic }, { withCredentials: true }).then(res => {
             if (res.data.error) {
                 toast(res.data.error, {
                     position: "top-right",

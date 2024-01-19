@@ -14,7 +14,7 @@ const MyChats = ({fetchAgain}) => {
 
     const fetchChats = async () => {
         try {
-            await axios.get('http://localhost:5000/chat/', {
+            await axios.get('https://viper-chat-app.onrender.com/chat/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + localStorage.getItem('jwt')

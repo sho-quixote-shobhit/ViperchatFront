@@ -13,7 +13,7 @@ import io from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationdata from './animations/typing.json'
 
-const ENDPOINT = "http://localhost:5000"
+const ENDPOINT = "https://viper-chat-app.onrender.com"
 var socket , selectedChatCompare , roomId;
 
 const SingleChat = ({ fetchAgain, setfetchAgain }) => {
@@ -39,7 +39,7 @@ const SingleChat = ({ fetchAgain, setfetchAgain }) => {
         try {
             setloading(true)
 
-            await axios.get(`http://localhost:5000/message/${selectedChat._id}` , {headers : {
+            await axios.get(`https://viper-chat-app.onrender.com/message/${selectedChat._id}` , {headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('jwt')
             }}).then(res => {
                 setmessages(res.data);
@@ -64,7 +64,7 @@ const SingleChat = ({ fetchAgain, setfetchAgain }) => {
             socket.emit('stop typing' , selectedChat._id)
             try {
                 setnewMessage('')
-                await axios.post('http://localhost:5000/message/' , {content : newMessage , chatId : selectedChat._id} , {headers : {
+                await axios.post('https://viper-chat-app.onrender.com/message/' , {content : newMessage , chatId : selectedChat._id} , {headers : {
                     'Content-Type' : 'application/json',
                     'Authorization' : 'Bearer ' + localStorage.getItem('jwt')
                 }}).then((res)=>{

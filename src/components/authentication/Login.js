@@ -37,7 +37,7 @@ const Login = () => {
             return;
         }
         setloading(true)
-        await axios.post('http://localhost:5000/user/login' , {email , password} , {withCredentials : true}).then(res=>{
+        await axios.post('https://viper-chat-app.onrender.com/user/login' , {email , password} , {withCredentials : true}).then(res=>{
             if (res.data.error) {
                 toast(res.data.error, {
                     position: "top-right",
